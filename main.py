@@ -24,6 +24,10 @@ app.add_middleware(
 scraper = WebScraper()
 analyzer = SEOAnalyzer()
 
+@app.get("/")
+def read_root():
+    return {"message": "Backend is live 🚀"}
+
 @app.get("/health")
 async def health():
     return {"ok": True}
